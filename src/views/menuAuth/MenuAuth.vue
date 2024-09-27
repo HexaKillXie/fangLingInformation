@@ -1,3 +1,3 @@
 <template>
-    菜单留白
+    菜单管理
 </template>

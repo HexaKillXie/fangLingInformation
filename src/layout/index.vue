@@ -1,12 +1,25 @@
 <template>
-    <div class="layout-border">
-        <v-header />
-        <v-menu />
-        <div class="main-content">
-            <!-- TODO：面包屑占位 -->
-            <!-- TODO：路由router-view占位 -->
-        </div>
-    </div>
+    <div class="common-layout">
+        <el-container>
+            <el-header height="80px" style="background-color: gray">
+                <v-header />
+            </el-header>
+            <el-container>
+                <el-aside width="250px" style="background-color: black">
+                    <v-menu />
+                </el-aside>
+                <el-main>
+                    Main
+                    <!-- TODO：面包屑占位 -->
+                    <router-view v-slot="{ Component }">
+                        <transition>
+                            <component :is="Component" ref="mainContent"/>
+                        </transition>
+                    </router-view>
+                </el-main>
+            </el-container>
+        </el-container>
+  </div>
 </template>
 
 <script setup lang="ts" name="IndexLayout">
@@ -15,3 +28,9 @@ import vHeader from './header/Header.vue';
 import vMenu from './leftMenu/LeftMenu.vue'
 
 </script>
+<style lang="scss" scoped>
+
+::v-deep.el-header{
+    --el-header-padding: 0;
+}
+</style>
