@@ -1,7 +1,7 @@
 <template>
     <div class="common-layout">
         <el-container>
-            <el-header height="80px" style="background-color: gray">
+            <el-header height="80px" style="background-color: var(--fl-color-dark-gray)">
                 <v-header />
             </el-header>
             <el-container>
