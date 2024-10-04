@@ -5,7 +5,7 @@
                 <v-header />
             </el-header>
             <el-container>
-                <el-aside width="250px" style="background-color: black">
+                <el-aside width="250px" class="menu-container">
                     <v-menu />
                 </el-aside>
                 <el-main>
@@ -32,5 +32,15 @@ import vMenu from './leftMenu/LeftMenu.vue'
 
 ::v-deep.el-header{
     --el-header-padding: 0;
+}
+::v-deep.el-container {
+    height: inherit;
+}
+.common-layout {
+    height: inherit;
+}
+
+.menu-container {
+    background-color: #000000;
 }
 </style>

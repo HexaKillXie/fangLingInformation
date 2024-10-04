@@ -1,0 +1,222 @@
+{
+    "msg": "操作成功",
+    "code": 200,
+    "data": [
+        {
+            "name": "basic",
+            "path": "/basic",
+            "hidden": false,
+            "redirect": "noRedirect",
+            "component": "Layout",
+            "alwaysShow": true,
+            "meta": {
+                "title": "菜单权限",
+                "icon": "",
+                "noCache": false,
+                "link": null
+            },
+            "children": [
+                {
+                    "name": "pageSetting",
+                    "path": "pagesetting",
+                    "hidden": false,
+                    "component": "basic/pagesetting/index",
+                    "meta": {
+                        "title": "页面管理",
+                        "icon": "set",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "AuthSetting",
+                    "path": "auth",
+                    "hidden": false,
+                    "component": "basic/auth/index",
+                    "meta": {
+                        "title": "权限管理",
+                        "icon": "",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "MenuSetting",
+                    "path": "menu",
+                    "hidden": false,
+                    "component": "basic/menu/index",
+                    "meta": {
+                        "title": "菜单管理",
+                        "icon": "tree-table",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "AuthGroup",
+                    "path": "group",
+                    "hidden": false,
+                    "component": "basic/group/index",
+                    "meta": {
+                        "title": "权限组管理",
+                        "icon": "tree",
+                        "noCache": false,
+                        "link": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Monitor",
+            "path": "/monitor",
+            "hidden": false,
+            "redirect": "noRedirect",
+            "component": "Layout",
+            "alwaysShow": true,
+            "meta": {
+                "title": "系统监控",
+                "icon": "monitor",
+                "noCache": false,
+                "link": null
+            },
+            "children": [
+                {
+                    "name": "Online",
+                    "path": "online",
+                    "hidden": false,
+                    "component": "monitor/online/index",
+                    "meta": {
+                        "title": "在线用户",
+                        "icon": "online",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "Job",
+                    "path": "job",
+                    "hidden": false,
+                    "component": "monitor/job/index",
+                    "meta": {
+                        "title": "定时任务",
+                        "icon": "job",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "Druid",
+                    "path": "druid",
+                    "hidden": false,
+                    "component": "monitor/druid/index",
+                    "meta": {
+                        "title": "数据监控",
+                        "icon": "druid",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "Server",
+                    "path": "server",
+                    "hidden": false,
+                    "component": "monitor/server/index",
+                    "meta": {
+                        "title": "服务监控",
+                        "icon": "server",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "Cache",
+                    "path": "cache",
+                    "hidden": false,
+                    "component": "monitor/cache/index",
+                    "meta": {
+                        "title": "缓存监控",
+                        "icon": "redis",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "CacheList",
+                    "path": "cacheList",
+                    "hidden": false,
+                    "component": "monitor/cache/list",
+                    "meta": {
+                        "title": "缓存列表",
+                        "icon": "redis-list",
+                        "noCache": false,
+                        "link": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tool",
+            "path": "/tool",
+            "hidden": false,
+            "redirect": "noRedirect",
+            "component": "Layout",
+            "alwaysShow": true,
+            "meta": {
+                "title": "系统工具",
+                "icon": "tool",
+                "noCache": false,
+                "link": null
+            },
+            "children": [
+                {
+                    "name": "Build",
+                    "path": "build",
+                    "hidden": false,
+                    "component": "tool/build/index",
+                    "meta": {
+                        "title": "表单构建",
+                        "icon": "build",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "Gen",
+                    "path": "gen",
+                    "hidden": false,
+                    "component": "tool/gen/index",
+                    "meta": {
+                        "title": "代码生成",
+                        "icon": "code",
+                        "noCache": false,
+                        "link": null
+                    }
+                },
+                {
+                    "name": "Swagger",
+                    "path": "swagger",
+                    "hidden": false,
+                    "component": "tool/swagger/index",
+                    "meta": {
+                        "title": "系统接口",
+                        "icon": "swagger",
+                        "noCache": false,
+                        "link": null
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Http://ruoyi.vip",
+            "path": "http://ruoyi.vip",
+            "hidden": false,
+            "component": "Layout",
+            "meta": {
+                "title": "若依官网",
+                "icon": "guide",
+                "noCache": false,
+                "link": "http://ruoyi.vip"
+            }
+        }
+    ]
+}

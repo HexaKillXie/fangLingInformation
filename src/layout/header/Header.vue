@@ -1,8 +1,7 @@
 <template>
-  <el-row class="row-bg" justify="space-between">
-    <el-col :span="4">
+   <div class="header-left-wrapper">
+      <div class="company-select-wrapper">
         <el-select
-            :teleported="false"
             v-model="company"
             :placeholder= "selectCompany"
             default-first-option
@@ -16,15 +15,20 @@
                 :label="item.label"
                 :value="item.value"
             />
-    </el-select>
-    </el-col>
-    <el-col :span="2" class="right-menu">
-      <el-badge :value="200" :max="99" class="item">
-        <el-icon size="35" color= "rgb(255, 255, 255)">
-          <BellFilled />
-        </el-icon>
-      </el-badge>
-      <el-divider direction="vertical" />
+        </el-select>
+      </div>
+      <div class="header-right-wrapper">
+        <div class="right-menu-item">
+          <el-badge :value="200" :max="99" class="item">
+            <el-icon size="40" color= "rgb(255, 255, 255)">
+              <BellFilled />
+            </el-icon>
+          </el-badge>
+        </div>
+        <div class="right-menu-item">
+          <el-divider direction="vertical" />
+        </div>
+        <div class="right-menu-item"></div>
         <div class="avatar-container">
           <el-dropdown
             @command="handleCommand($event)"
@@ -36,10 +40,10 @@
             </div>
             <template #dropdown>
               <el-dropdown-menu>
-                <router-link to="/user/profile">
-                  <el-dropdown-item>个人中心</el-dropdown-item>
-                </router-link>
-                <el-dropdown-item command="setLayout">
+                <el-dropdown-item command="userCenter">
+                  <span>个人中心</span>
+                </el-dropdown-item>
+                <el-dropdown-item command="setAccount">
                   <span>账号设置</span>
                 </el-dropdown-item>
                 <el-dropdown-item divided command="logout">
@@ -49,8 +53,9 @@
             </template>
           </el-dropdown>
         </div>
-    </el-col>
-  </el-row>
+      </div>
+   </div>
+
 </template>
 
 <script lang="ts" setup>
@@ -84,8 +89,11 @@ const change =  (val: any) => {
 }
 
 // TODO: 处理下拉选项操作
-function handleCommand(command) {
+function handleCommand(command: any) {
 	switch (command) {
+    case "userCenter":
+			// setLayout();
+			break;
 		case "setLayout":
 			// setLayout();
 			break;
@@ -100,15 +108,6 @@ function handleCommand(command) {
 </script>
 
 <style lang="scss" scoped>
-::v-deep.el-row{
-    height: inherit;
-}
-
-.right-menu{
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
 
 ::v-deep.el-badge{
   --el-badge-font-size: 10px;
@@ -133,10 +132,17 @@ function handleCommand(command) {
 ::v-deep(.el-select__placeholder){
   display: inherit;
   justify-content: center;
+  &.is-transparent {
+    color: var(--el-text-color-primary);
+  }
 }
+
 
 .avatar-container {
 			margin-left: 16px;
+      margin-right: 24px;
+      display: inherit;
+      cursor: pointer;
 
 			.avatar-wrapper {
 				position: relative;
@@ -157,4 +163,34 @@ function handleCommand(command) {
 				}
 			}
 		}
+
+    .header-left-wrapper {
+      overflow: hidden;
+      position: relative;
+
+      .company-select-wrapper {
+        float: left;
+      }
+    }
+
+    .header-right-wrapper {
+      float: right;
+		  display: flex;
+      height: 80px;
+
+      .right-menu-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &.hover-effect {
+				cursor: pointer;
+				transition: background 0.3s;
+
+				&:hover {
+					background: rgba(0, 0, 0, 0.025);
+				}
+			}
+    }
 </style>

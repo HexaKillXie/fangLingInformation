@@ -6,7 +6,7 @@ import RegisterView from "@/views/Register.vue";
 
 
 export const Layout = () => import("../layout/index.vue");
-const routes = [
+export const constantRoutes = [
     { path: '/',redirect: '/home' },
     { path: '/login', component: LoginView },
     { path: '/register', component: RegisterView },
@@ -27,23 +27,13 @@ const routes = [
                 affix: true
               },
             },
-            // {
-            //     path: "/menumgt",
-            //     component: () => import("@/views/menuAuth/MenuAuth.vue"),
-            //     name: "menuAuth",
-            //     meta: {
-            //       title: "首页",
-            //       fullPath: "/home",
-            //       affix: true
-            //     },
-            //   },
           ],
     }
 ]
-
+export const dynamicRoutes = [];
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes:constantRoutes
 })
  // 是否显示重新登录
  export const isRelogin = { show: false };
